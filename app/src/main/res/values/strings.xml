@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">The Meal</string>
+    <string name="buscador_hint">Qué receta buscas?</string>
+</resources>
