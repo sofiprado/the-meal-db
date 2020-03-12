@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sofiaprado.themeal.R
 import domain.entities.Meal
@@ -38,16 +39,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun prueba(lista : List<Meal>) {
-    lista.elementAt(4)
+      //  Log.d("Pruebaaaaaaaaaa", lista[0].title)
+        mealRecyclerView.adapter = MealAdapter(lista)
+
+    }
+    private fun getMeals() {
+        viewModel.getMealByQuery("")
+
     }
 
     private fun setRecyclerView() {
         mealRecyclerView = findViewById(R.id.activity_meal_recycler_view)
-    }
-
-    private fun getMeals() {
-        viewModel.getMealByQuery("")
-        Log.d("prueba", "prueba")
+        mealRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 
     private fun showMeals(mealsList: List<Meal>?) {

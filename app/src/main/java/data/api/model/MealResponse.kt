@@ -6,5 +6,7 @@ data class MealResponse(
     @SerializedName("strMeal")
     val title: String,
     @SerializedName("strCategory")
-    val category: String
+    val category: String,
+    @SerializedName("strMealThumb")
+    val mealImg: String
 )

@@ -7,6 +7,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class Meal(
     val title: String
+
 ): Parcelable{
     constructor(mealResponse: MealResponse): this(
         mealResponse.title
