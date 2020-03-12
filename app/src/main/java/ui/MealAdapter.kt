@@ -11,7 +11,6 @@ import android.view.LayoutInflater
 class MealAdapter(val meals: List<Meal>):
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
-
     interface MealListener{
         fun onItemClick(meal: Meal)
     }
@@ -33,11 +32,9 @@ class MealAdapter(val meals: List<Meal>):
 
     override fun getItemCount(): Int = meals.size
 
-
     class MealViewHolder(view: View): RecyclerView.ViewHolder(view){
         val title: TextView= view.findViewById(R.id.meal_adapter_title)
     }
-
 }
 
 

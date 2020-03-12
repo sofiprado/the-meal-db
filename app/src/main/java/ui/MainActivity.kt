@@ -8,14 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.sofiaprado.themeal.R
-import data.api.MealService
-import data.api.model.MealDbResponse
-import data.api.RetrofitApiClient
-import data.repository.MealRepository
 import domain.entities.Meal
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,11 +27,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //dentro del when, en response.data, va el método que va a decir qué hacer con esa respuesta
+
     private fun handleMealResponse(response: MealViewModel.MealRequestResponse) {
+
         when(response) {
-            is MealViewModel.MealRequestResponse.Success -> { response.data }
+            is MealViewModel.MealRequestResponse.Success -> {prueba(response.data) }
             is MealViewModel.MealRequestResponse.Error -> { response.error }
         }
+    }
+
+    fun prueba(lista : List<Meal>) {
+    lista.elementAt(4)
     }
 
     private fun setRecyclerView() {
@@ -46,25 +46,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getMeals() {
-
         viewModel.getMealByQuery("")
-        /*retrofitClient.getMeals("a").enqueue(object: Callback<MealDbResponse> {
-            override fun onResponse(
-                call: Call<MealDbResponse>,
-                response: Response<MealDbResponse>
-            ) {
-                if (response.isSuccessful){
-                    val mealsList= response.body()?.mealsResult?.map { mealResponse ->  Meal(mealResponse) }
-                    showMeals(mealsList)
-                    Log.i("check", response.toString() )
-                } else {
-                    errorLog()
-                }
-            }
-            override fun onFailure(call: Call<MealDbResponse>, t: Throwable) {
-            errorLog()
-            }
-        })*/
+        Log.d("prueba", "prueba")
     }
 
     private fun showMeals(mealsList: List<Meal>?) {
@@ -77,12 +60,6 @@ class MainActivity : AppCompatActivity() {
                 showMealDetail(meal)
             }
         }
-
-        
-    }
-    
-    private fun errorLog() {
-        Log.e("error", "error en getMeals")
     }
     
     private fun showMealDetail(meal: Meal) {
@@ -90,5 +67,4 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(MealDetailActivity.MEAL_DETAIL, meal)
         startActivity(intent)
     }
-
 }
