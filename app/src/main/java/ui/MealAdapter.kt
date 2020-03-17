@@ -11,19 +11,24 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import com.squareup.picasso.PicassoProvider
 
-class MealAdapter(val meals: List<Meal>):
+class MealAdapter(val meals: List<Meal>, private val itemClick: onItemClickListener):
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
-    interface MealListener{
+  /*  interface MealListener{
         fun onItemClick(meal: Meal)
     }
+     var listener: MealListener?= null*/
 
-    var listener: MealListener?= null
 
+//1
+    interface onItemClickListener {
+
+    operator fun invoke(meal: Meal)
+}
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.meal_adapter,parent,false)
-        return MealViewHolder(view)
+        return MealViewHolder(view, itemClick)
     }
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
@@ -36,16 +41,19 @@ class MealAdapter(val meals: List<Meal>):
             .load(url)
             .into(holder.mealImgUrl)
 
-        holder.itemView.setOnClickListener{listener?.onItemClick(meal)}
+        holder.itemView.setOnClickListener { itemClick(meal) }
+        //holder.itemView.setOnClickListener{listener?.onItemClick(meal)}
     }
 
 
     override fun getItemCount(): Int = meals.size
 
-    class MealViewHolder(view: View): RecyclerView.ViewHolder(view){
+    class MealViewHolder(view: View, private val itemClick: onItemClickListener): RecyclerView.ViewHolder(view){
         val title: TextView= view.findViewById(R.id.meal_adapter_title)
         val category: TextView= view.findViewById(R.id.meal_adapter_category)
         val mealImgUrl: ImageView= view.findViewById(R.id.meal_adapter_img)
+
+
     }
 }
 
