@@ -8,5 +8,5 @@ data class MealResponse(
     @SerializedName("strCategory")
     val category: String,
     @SerializedName("strMealThumb")
-    val mealImg: String
+    val mealImgUrl: String
 )

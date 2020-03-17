@@ -33,39 +33,38 @@ class MainActivity : AppCompatActivity() {
     private fun handleMealResponse(response: MealViewModel.MealRequestResponse) {
 
         when(response) {
-            is MealViewModel.MealRequestResponse.Success -> {prueba(response.data) }
+            is MealViewModel.MealRequestResponse.Success -> { prueba(response.data) }
             is MealViewModel.MealRequestResponse.Error -> { response.error }
         }
     }
 
-    fun prueba(lista : List<Meal>) {
       //  Log.d("Pruebaaaaaaaaaa", lista[0].title)
-        mealRecyclerView.adapter = MealAdapter(lista)
-
-    }
-    private fun getMeals() {
-        viewModel.getMealByQuery("")
-
-    }
 
     private fun setRecyclerView() {
         mealRecyclerView = findViewById(R.id.activity_meal_recycler_view)
         mealRecyclerView.layoutManager = LinearLayoutManager(this)
     }
+    private fun getMeals() {
+        viewModel.getMealByQuery("")
+    }
 
-    private fun showMeals(mealsList: List<Meal>?) {
-    if(mealsList.isNullOrEmpty())
-        return
+    private fun prueba(lista: List<Meal>){
+        mealRecyclerView.adapter = MealAdapter(lista)
 
-        val adapter= MealAdapter(mealsList)
-        adapter.listener = object: MealAdapter.MealListener{
+        if (lista.isNullOrEmpty())
+            return
+        val adapter = MealAdapter(lista)
+        adapter.listener = object : MealAdapter.MealListener {
             override fun onItemClick(meal: Meal) {
                 showMealDetail(meal)
+
             }
         }
     }
-    
+
     private fun showMealDetail(meal: Meal) {
+
+        Log.i("probando itemClick", "onItemClick")
         val intent = Intent(this, MealDetailActivity::class.java)
         intent.putExtra(MealDetailActivity.MEAL_DETAIL, meal)
         startActivity(intent)

@@ -6,10 +6,14 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class Meal(
-    val title: String
+    val title: String,
+    val category: String,
+    val mealImgUrl: String
 
 ): Parcelable{
     constructor(mealResponse: MealResponse): this(
-        mealResponse.title
+        mealResponse.title,
+        mealResponse.category,
+        mealResponse.mealImgUrl
     )
 }

@@ -24,7 +24,7 @@ class MealViewModel : ViewModel() {
         //reutilizar modificando el método a usar getmeals, getMealbyqUERY, etc.
     }
 
-        //reutilizar método para tódos los request
+        //reutilizar método para todos los request
     sealed class MealRequestResponse {
         class Success(val data: List<Meal>): MealRequestResponse()
         class Error(val error: Throwable): MealRequestResponse()
