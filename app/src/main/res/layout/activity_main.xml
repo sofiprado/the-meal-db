@@ -8,35 +8,37 @@
     tools:context=".ui.MainActivity">
 
     <EditText
-        android:id="@+id/search_bar"
+        android:id="@+id/edit_text_main_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="@dimen/text_min_space"
         android:hint="@string/buscador_hint"
-        app:layout_constraintEnd_toStartOf="@+id/searchIconImageView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/searchIconImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginEnd="8dp"
-        android:contentDescription="Buscar en Meal DB"
-        app:layout_constraintBottom_toBottomOf="@+id/search_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/search_bar"
-        app:srcCompat="@drawable/ic_search_24px" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/activity_meal_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="417dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_main_search" />
+
+    <ImageView
+        android:id="@+id/random_image"
+        android:layout_width="331dp"
+        android:layout_height="161dp"
+        android:layout_margin="@dimen/text_min_space"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_meal_recycler_view"
+        app:layout_constraintVertical_bias="0.902" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,18 +9,20 @@
 
   <TextView
       android:id="@+id/meal_adapter_title"
+      style="@style/meal_main_title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       app:layout_constraintStart_toEndOf="@id/meal_adapter_img"
       app:layout_constraintTop_toTopOf="parent"
-      android:layout_margin="@dimen/text_label_space"
+      android:layout_margin="@dimen/text_min_space"
       tools:text="Lasagna" />
 
   <TextView
       android:id="@+id/meal_adapter_category"
+      style="@style/meal_title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="@dimen/text_label_space"
+      android:layout_marginLeft="@dimen/text_min_space"
       app:layout_constraintBottom_toBottomOf="@+id/meal_category_label"
       app:layout_constraintStart_toEndOf="@+id/meal_category_label"
       app:layout_constraintTop_toTopOf="@+id/meal_category_label"
@@ -28,9 +30,10 @@
 
   <TextView
       android:id="@+id/meal_category_label"
+      style="@style/meal_title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_margin="@dimen/text_label_space"
+      android:layout_margin="@dimen/text_min_space"
       android:text="@string/meal_category_label"
       app:layout_constraintStart_toEndOf="@id/meal_adapter_img"
       app:layout_constraintTop_toBottomOf="@id/meal_adapter_title" />
@@ -41,7 +44,7 @@
       android:layout_height="130dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      android:layout_margin="@dimen/text_label_space"/>
+      android:layout_margin="@dimen/text_min_space"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

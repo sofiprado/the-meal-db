@@ -11,6 +11,8 @@ object MealApiManager {
 
     fun getMeals(query: String): Single<MealDbResponse> = retrofitClient.getMeals(query)
 
+    //fun getMealByQuery(query: String): Single<MealDbResponse> = retrofitClient.getMealByQuery(query)
+
     fun getMealById(query: Int): Single<MealDbResponse> = retrofitClient.getMealById(query)
 
     fun getRandomMeal(): Single<MealDbResponse> = retrofitClient.getRandomMeal()

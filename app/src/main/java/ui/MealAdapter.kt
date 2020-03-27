@@ -14,13 +14,6 @@ import com.squareup.picasso.PicassoProvider
 class MealAdapter(val meals: List<Meal>, private val itemClick: onItemClickListener):
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
 
-  /*  interface MealListener{
-        fun onItemClick(meal: Meal)
-    }
-     var listener: MealListener?= null*/
-
-
-//1
     interface onItemClickListener {
 
     operator fun invoke(meal: Meal)
@@ -42,7 +35,6 @@ class MealAdapter(val meals: List<Meal>, private val itemClick: onItemClickListe
             .into(holder.mealImgUrl)
 
         holder.itemView.setOnClickListener { itemClick(meal) }
-        //holder.itemView.setOnClickListener{listener?.onItemClick(meal)}
     }
 
 
@@ -52,8 +44,6 @@ class MealAdapter(val meals: List<Meal>, private val itemClick: onItemClickListe
         val title: TextView= view.findViewById(R.id.meal_adapter_title)
         val category: TextView= view.findViewById(R.id.meal_adapter_category)
         val mealImgUrl: ImageView= view.findViewById(R.id.meal_adapter_img)
-
-
     }
 }
 

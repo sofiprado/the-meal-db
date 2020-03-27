@@ -1,6 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/meal_detail_title"
+        style="@style/meal_main_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/meal_detail_img"
+        app:layout_constraintTop_toTopOf="@+id/meal_detail_img"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/meal_detail_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintBottom_toBottomOf="@+id/meal_detail_category_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/meal_detail_category_label"
+        app:layout_constraintTop_toTopOf="@+id/meal_detail_category_label"
+        tools:text="Category" />
+
+    <TextView
+        android:id="@+id/meal_detail_category_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_min_space"
+        android:text="@string/meal_category_label"
+        app:layout_constraintStart_toEndOf="@+id/meal_detail_img"
+        app:layout_constraintTop_toBottomOf="@+id/meal_detail_title" />
+
+    <ImageView
+        android:id="@+id/meal_detail_img"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_margin="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredients_label"
+        style="@style/meal_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        android:layout_marginTop="@dimen/text_min_space"
+        android:text="Ingredients:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_img" />
+
+
+    <TextView
+        android:id="@+id/meal_detail_instructions_label"
+        style="@style/meal_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_min_space"
+        android:layout_marginStart="@dimen/text_min_space"
+        android:layout_marginBottom="@dimen/text_min_space"
+        android:text="Instructions:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient10" />
+
+    <TextView
+        android:id="@+id/meal_detail_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_instructions_label"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        android:layout_marginTop="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredients_label"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient1"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient2"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient3"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient4"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient5"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient6"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient7"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient8"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_min_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient9"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_space"
+        app:layout_constraintBottom_toBottomOf="@+id/meal_detail_ingredient1"
+        app:layout_constraintStart_toEndOf="@+id/meal_detail_ingredient1"
+        app:layout_constraintTop_toTopOf="@+id/meal_detail_ingredient1"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/meal_detail_ingredient2"
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient11"
+        app:layout_constraintTop_toBottomOf="@+id/meal_detail_ingredient11"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient12"
+        app:layout_constraintTop_toBottomOf="@+id/meal_detail_ingredient12"
+        tools:text="ingredient"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="@+id/meal_detail_ingredient4"
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient13"
+        app:layout_constraintTop_toBottomOf="@+id/meal_detail_ingredient13"
+        tools:text="ingredient"></TextView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

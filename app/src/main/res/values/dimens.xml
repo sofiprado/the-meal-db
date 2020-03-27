@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="search_bar_space">8dp</dimen>
-    <dimen name="text_label_space">8dp</dimen>
+    <dimen name="text_min_space">8dp</dimen>
+    <dimen name="text_space">80dp</dimen>
+
 </resources>

@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="meal_main_title" parent="AppTheme">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/meal_text_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="meal_title" parent="AppTheme">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/meal_text_title</item>
+    </style>
+
+    <style name="meal_body" parent="AppTheme">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor"></item>
+    </style>
+
 </resources>

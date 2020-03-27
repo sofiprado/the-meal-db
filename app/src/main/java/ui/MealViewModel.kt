@@ -12,9 +12,10 @@ import io.reactivex.schedulers.Schedulers
 class MealViewModel : ViewModel() {
     private var disposable: Disposable? = null
     val mealLiveData = MutableLiveData<MealRequestResponse>()
+    val randomMealLiveData = MutableLiveData<RandomMealRequestResponse>()
 
     //un método para cada request
-    fun getMealByQuery(query: String) {
+    fun getMeals(query: String) {
         disposable = MealRepository
             .getMeals(query)
             .observeOn(AndroidSchedulers.mainThread())
@@ -22,12 +23,27 @@ class MealViewModel : ViewModel() {
             .subscribe( { success -> mealLiveData.value = MealRequestResponse.Success(success) }, { error ->  MealRequestResponse.Error(error)} )
     //mealLiveData.value asigna un valor una vez que el request dio success
         //reutilizar modificando el método a usar getmeals, getMealbyqUERY, etc.
+
+    }
+
+    fun getRandomMeal(){
+        disposable = MealRepository
+            .getRandomMeal()
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe( { success -> randomMealLiveData.value = RandomMealRequestResponse.Success(success) }, { error ->  RandomMealRequestResponse.Error(error)} )
     }
 
         //reutilizar método para todos los request
     sealed class MealRequestResponse {
         class Success(val data: List<Meal>): MealRequestResponse()
         class Error(val error: Throwable): MealRequestResponse()
+    }
+
+    sealed class RandomMealRequestResponse{
+        class Success(val data: List<Meal>): RandomMealRequestResponse()
+        class Error(val error: Throwable): RandomMealRequestResponse()
+
     }
 
     override fun onCleared() {

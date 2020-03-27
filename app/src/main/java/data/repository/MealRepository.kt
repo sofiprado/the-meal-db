@@ -11,4 +11,10 @@ object MealRepository {
             it.mealsResult.map { mealResponse ->  Meal(mealResponse) }
         }
     }
+
+    fun getRandomMeal(): Single<List<Meal>>{
+        return MealApiManager.getRandomMeal().map {
+            it.mealsResult.map { mealResponse ->  Meal(mealResponse) }
+        }
+    }
 }
