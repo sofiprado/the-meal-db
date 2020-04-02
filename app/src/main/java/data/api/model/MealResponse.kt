@@ -36,6 +36,7 @@ data class MealResponse(
     @SerializedName("strIngredient12")
     val ingredient12: String,
     @SerializedName("strIngredient13")
-    val ingredient13: String
-
+    val ingredient13: String,
+    @SerializedName("strYoutube")
+    val strYoutube: String
 )

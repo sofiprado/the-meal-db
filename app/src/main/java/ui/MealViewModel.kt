@@ -8,6 +8,7 @@ import domain.entities.Meal
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 class MealViewModel : ViewModel() {
     private var disposable: Disposable? = null
@@ -25,11 +26,13 @@ class MealViewModel : ViewModel() {
         //reutilizar modificando el método a usar getmeals, getMealbyqUERY, etc.
 
     }
+    //{ completed -> completed.delay(2, TimeUnit.SECONDS) }
 
     fun getRandomMeal(){
         disposable = MealRepository
             .getRandomMeal()
             .observeOn(AndroidSchedulers.mainThread())
+            .repeatWhen { completed -> completed.delay(30, TimeUnit.SECONDS) }
             .subscribeOn(Schedulers.io())
             .subscribe( { success -> randomMealLiveData.value = RandomMealRequestResponse.Success(success) }, { error ->  RandomMealRequestResponse.Error(error)} )
     }

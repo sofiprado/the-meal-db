@@ -1,8 +1,10 @@
 package com.sofiaprado.themeal.ui
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import com.sofiaprado.themeal.R
 import com.squareup.picasso.Picasso
@@ -30,6 +32,11 @@ class MealDetailActivity : AppCompatActivity(){
         category.text = mealDetail.category
         val recipeInstructions: TextView = findViewById(R.id.meal_detail_instructions)
         recipeInstructions.text = mealDetail.recipeInstructions
+
+        val videoView: VideoView = findViewById(R.id.meal_detail_video)
+        val uri: Uri = Uri.parse(mealDetail.strYoutube)
+        videoView.setVideoURI(uri)
+        videoView.start()
 
         val mealImg: ImageView = findViewById(R.id.meal_detail_img)
         val url = mealDetail.mealImgUrl

@@ -74,6 +74,8 @@
         android:id="@+id/meal_detail_instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/meal_detail_instructions_label"></TextView>
 
@@ -85,7 +87,7 @@
         android:layout_marginTop="@dimen/text_min_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredients_label"
-        tools:text="ingredient"></TextView>
+        tools:text="ingredient1"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient2"
@@ -94,7 +96,7 @@
         android:layout_marginStart="@dimen/text_min_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient1"
-        tools:text="ingredient"></TextView>
+        tools:text="ingredient2"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient3"
@@ -103,7 +105,7 @@
         android:layout_marginStart="@dimen/text_min_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient2"
-        tools:text="ingredient"></TextView>
+        tools:text="ingredient3"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient4"
@@ -112,7 +114,7 @@
         android:layout_marginStart="@dimen/text_min_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient3"
-        tools:text="ingredient"></TextView>
+        tools:text="ingredient4"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient5"
@@ -121,89 +123,99 @@
         android:layout_marginStart="@dimen/text_min_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient4"
-        tools:text="ingredient"></TextView>
+        tools:text="ingredient5"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_min_space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient5"
-        tools:text="ingredient"></TextView>
+       android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/meal_detail_ingredient1"
+        app:layout_constraintTop_toTopOf="@+id/meal_detail_ingredient1"
+        tools:text="ingredient6"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_min_space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient6"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient6"
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient2"
+        tools:text="ingredient7"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_min_space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient7"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient7"
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient3"
+        tools:text="ingredient8"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_min_space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient8"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient8"
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient4"
+        tools:text="ingredient9"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_min_space"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/meal_detail_ingredient9"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient9"
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient5"
+        tools:text="ingredient10"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_space"
-        app:layout_constraintBottom_toBottomOf="@+id/meal_detail_ingredient1"
-        app:layout_constraintStart_toEndOf="@+id/meal_detail_ingredient1"
-        app:layout_constraintTop_toTopOf="@+id/meal_detail_ingredient1"
-        tools:text="ingredient"></TextView>
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@+id/meal_detail_ingredient6"
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient6"
+        tools:text="ingredient11"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/meal_detail_ingredient2"
         app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient11"
-        app:layout_constraintTop_toBottomOf="@+id/meal_detail_ingredient11"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient7"
+        tools:text="ingredient12"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient12"
-        app:layout_constraintTop_toBottomOf="@+id/meal_detail_ingredient12"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient8"
+        tools:text="ingredient13"></TextView>
 
     <TextView
         android:id="@+id/meal_detail_ingredient14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         app:layout_constraintBottom_toBottomOf="@+id/meal_detail_ingredient4"
         app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient13"
-        app:layout_constraintTop_toBottomOf="@+id/meal_detail_ingredient13"
-        tools:text="ingredient"></TextView>
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient9"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="ingredient14"></TextView>
+
+    <TextView
+        android:id="@+id/meal_detail_ingredient15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/meal_detail_ingredient14"
+        app:layout_constraintTop_toTopOf="@id/meal_detail_ingredient10"
+        tools:text="ingredient15"></TextView>
+
+    <VideoView
+        android:id="@+id/meal_detail_video"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.913"></VideoView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

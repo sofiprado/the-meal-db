@@ -22,7 +22,8 @@ class Meal(
     val ingredient10: String,
     val ingredient11: String,
     val ingredient12: String,
-    val ingredient13: String
+    val ingredient13: String,
+    val strYoutube: String
 
 
     ): Parcelable{
@@ -43,7 +44,7 @@ class Meal(
         mealResponse.ingredient10,
         mealResponse.ingredient11,
         mealResponse.ingredient12,
-        mealResponse.ingredient13
-
+        mealResponse.ingredient13,
+        mealResponse.strYoutube
     )
 }
