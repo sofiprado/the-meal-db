@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    //dentro del when, en response.data, va el método que va a decir qué hacer con esa respuesta
 
     private fun handleMealResponse(response: MealViewModel.MealRequestResponse) {
 

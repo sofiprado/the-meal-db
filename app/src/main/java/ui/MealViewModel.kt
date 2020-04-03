@@ -15,7 +15,6 @@ class MealViewModel : ViewModel() {
     val mealLiveData = MutableLiveData<MealRequestResponse>()
     val randomMealLiveData = MutableLiveData<RandomMealRequestResponse>()
 
-    //un método para cada request
     fun getMeals(query: String) {
         disposable = MealRepository
             .getMeals(query)
@@ -23,10 +22,8 @@ class MealViewModel : ViewModel() {
             .subscribeOn(Schedulers.io())
             .subscribe( { success -> mealLiveData.value = MealRequestResponse.Success(success) }, { error ->  MealRequestResponse.Error(error)} )
     //mealLiveData.value asigna un valor una vez que el request dio success
-        //reutilizar modificando el método a usar getmeals, getMealbyqUERY, etc.
 
     }
-    //{ completed -> completed.delay(2, TimeUnit.SECONDS) }
 
     fun getRandomMeal(){
         disposable = MealRepository
